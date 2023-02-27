@@ -44,8 +44,13 @@
             if (typeof Captcha !== "undefined") {
                 Captcha.postMessage(response);
             }
-
-            callFlutterEventHandler(JSON.stringify(response));
+            const payload = {
+              action: 'hcaptcha_key',
+              action_value: {
+                text: `${response}`,
+              },
+            };
+            callFlutterEventHandler(JSON.stringify(payload));
         }
     </script>
 </body>
