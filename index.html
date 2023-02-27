@@ -7,15 +7,17 @@
     <title>Captcha Challenge</title>
 </head>
 <style>
-.content {
-  max-width: 500px;
-  margin: auto;
-  background: white;
-  padding: 10px;
-}
+    /* already defined in bootstrap4 */
+    .text-xs-center {
+        text-align: center;
+    }
+
+    .h-captcha {
+        display: inline-block;
+    }
 </style>
 <body>
-    <div class="content">
+    <div class="text-xs-center">
         <form method="POST">
             <div class="h-captcha" data-sitekey="7c7ed18d-afea-409e-9306-91368490a73a" data-callback="captchaCallback">
             </div>
