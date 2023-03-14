@@ -1,32 +1,10 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-
-    <meta name="viewport" content="width=device-width" charset="utf-8">
-    <title>Captcha Challenge</title>
-</head>
-<style>
-    /* already defined in bootstrap4 */
-    .text-xs-center {
-        text-align: center;
-    }
-
-    .h-captcha {
-        display: inline-block;
-    }
-</style>
-<body>
-    <div class="text-xs-center">
-        <form method="POST">
-            <div class="h-captcha" data-sitekey="7c7ed18d-afea-409e-9306-91368490a73a" data-callback="captchaCallback">
-            </div>
-            <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
-        </form>
-    </div>
-    <script>
-
-        function isAppHandleRedirectionWithVersion() {
+  <head>
+    <title>reCAPTCHA demo: Simple page</title>
+     <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+     <script>
+       function isAppHandleRedirectionWithVersion() {
             const webView = cookie('webview') || '';
 
             if (
@@ -62,7 +40,12 @@
             };
             callFlutterEventHandler(JSON.stringify(payload));
         }
-    </script>
-</body>
-
+     </script>
+  </head>
+  <body>
+    <form id="demo-form" action="?" method="POST">
+      <button class="h-captcha" data-sitekey="7c7ed18d-afea-409e-9306-91368490a73a" data-callback="captchaCallback">Submit</button>
+      <br/>
+    </form>
+  </body>
 </html>
